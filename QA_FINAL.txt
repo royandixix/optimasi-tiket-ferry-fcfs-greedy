@@ -1,0 +1,25 @@
+QA FINAL - OPTIMASI TIKET FERRY
+Tanggal paket: 2026-08-11
+
+HASIL PENGECEKAN PROJECT:
+[PASS] 123 file PHP aplikasi/config/migration/route/test lolos php -l.
+[PASS] 19 Blade view portal user berhasil dikompilasi dan hasil PHP-nya lolos syntax lint.
+[PASS] Laravel route bootstrap berhasil; 40 route aplikasi terdaftar.
+[PASS] Route penting user/pemesanan, admin/kapals, dan admin/jadwal-keberangkatans terdaftar.
+[PASS] Smoke-test ranking rekomendasi: filter sisa=0 dan urutan persentase/sisa bekerja sesuai desain.
+[PASS] Link Pemesanan pada navbar dan dashboard mengaktifkan modal rekomendasi.
+[PASS] Kapal nonaktif difilter dari jadwal yang ditawarkan user.
+[PASS] Sinkronisasi kapasitas jadwal dari data kapal dilakukan ulang di server saat create/edit jadwal.
+[PASS] Menu Alokasi Tiket dan Hasil Optimasi disembunyikan dari sidebar admin.
+[PASS] Pembuatan/edit manual Alokasi Tiket dinonaktifkan.
+[PASS] public/storage memakai symlink relatif: ../storage/app/public.
+[PASS] vendor/autoload.php disertakan; Composer tidak diperlukan untuk menjalankan paket selama vendor utuh.
+[PASS] public/build/manifest.json disertakan; perubahan final berada pada PHP/Blade sehingga tidak membutuhkan rebuild JS/CSS.
+
+BATAS PENGECEKAN DI ENVIRONMENT PEMBUAT PAKET:
+- Tidak tersedia server MySQL pada container QA, sehingga pengujian transaksi database end-to-end tidak dapat dijalankan di sini.
+- PHP pada container QA tidak memiliki extension DOM/PDO MySQL lengkap untuk menjalankan semua command console Filament.
+- Script jalankan-setelah-extract.sh melakukan preflight dan akan memberi pesan jelas jika extension/DB lokal belum siap.
+
+CATATAN PENTING:
+Database MySQL dan isi datanya berada di luar ZIP. Jika memakai database project lama yang sudah berjalan, pertahankan konfigurasi .env/database yang sama. Migration tidak menghapus data existing.

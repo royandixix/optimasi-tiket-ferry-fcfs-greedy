@@ -1,0 +1,13 @@
+PATCH v4.1 - FIX VIEW KATALOG KAPAL + REKOMENDASI KLIK
+
+1. Pastikan Terminal berada di ~/Downloads
+2. Jalankan:
+
+unzip -o PATCH-v4.1-FIX-KATALOG-REKOMENDASI.zip -d ~/Downloads/optimasi-tiket-ferry-FINAL-BIMBINGAN
+cd ~/Downloads/optimasi-tiket-ferry-FINAL-BIMBINGAN
+php artisan optimize:clear
+composer run dev
+
+3. Buka http://127.0.0.1:8000
+
+Patch ini tidak menghapus database, data kapal, user, jadwal, pemesanan, atau foto upload.

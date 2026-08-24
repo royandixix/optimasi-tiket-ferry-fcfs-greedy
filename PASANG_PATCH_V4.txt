@@ -1,0 +1,10 @@
+PATCH V4 - REKOMENDASI KLIK JADWAL
+
+Dari folder Downloads jalankan:
+
+unzip -o PATCH-v4-REKOMENDASI-KLIK.zip -d ~/Downloads/optimasi-tiket-ferry-FINAL-BIMBINGAN
+cd ~/Downloads/optimasi-tiket-ferry-FINAL-BIMBINGAN
+php artisan optimize:clear
+composer run dev
+
+Patch ini tidak menghapus database MySQL dan tidak menghapus folder upload storage milik project lokal.

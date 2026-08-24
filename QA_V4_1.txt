@@ -1,0 +1,7 @@
+PATCH v4.1
+- Memperbaiki View [user.pemesanan.partials.kapal-admin-catalog] not found.
+- Menyertakan ulang semua dependensi fitur data kapal user dari patch v3.
+- Menyertakan fitur klik Jadwal A -> rekomendasi Jadwal B yang lebih longgar dari patch v4.
+- Rekomendasi hanya saran; user tetap bisa memilih Jadwal A.
+- Data kapal aktif admin tetap dibaca ulang saat user membuka/refresh halaman.
+- Tidak mengubah migration/database dan tidak menghapus data lokal.

@@ -1,0 +1,24 @@
+QA V4 - REKOMENDASI KLIK JADWAL
+
+Pemeriksaan source:
+- 115 file PHP pada app/routes/config/database: syntax OK
+- 4 Blade yang diubah: berhasil dikompilasi dengan BladeCompiler
+- JavaScript halaman buat pemesanan: node --check OK
+- composer.json: JSON valid
+- Route user.pemesanan index/create/store/edit/show/update: terdaftar
+- node_modules/.bin/vite: tersedia
+- binding Darwin ARM64: tersedia
+- jalankan-dev.sh: bash syntax OK
+
+Perilaku rekomendasi V4:
+- User klik Jadwal A.
+- Sistem mencari alternatif hanya pada rute yang sama.
+- Alternatif harus mempunyai persentase kapasitas kosong lebih besar dari A.
+- Alternatif pada tanggal yang sama diprioritaskan.
+- Jika ada B yang lebih longgar, popup perbandingan A vs B muncul.
+- User dapat memilih B atau tetap memilih A.
+- Jika tidak ada alternatif yang lebih longgar, popup tidak muncul.
+- Pemesanan tetap pending; rekomendasi tidak menggantikan proses FCFS/Greedy.
+
+Catatan lingkungan QA:
+- Container QA tidak memiliki ekstensi PHP DOM, sehingga perintah Artisan yang merender output Termwind tidak dipakai untuk QA. Route diuji melalui bootstrap Laravel langsung dan Blade yang diubah dikompilasi melalui BladeCompiler.
